@@ -12,7 +12,7 @@ def BDD():
     CONNECTION_STRING = 'mongodb://'+config["USER"] +':'+ config["MDP"] +'@'+ config["IP"] +':'+ config["PORT"] +'/'+ config["BDD"]
     client = MongoClient(CONNECTION_STRING)
 
-    return client['cams']
+    return client[config["BDD"]]
 
 def GET_USER( _sDB, _oQY={}, _sSort='', _nOrder= '', _nLimit= '' ):
     global _responses
